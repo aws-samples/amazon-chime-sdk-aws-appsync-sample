@@ -1,4 +1,4 @@
-# Cross Talk - Chime SDK Video Chat and AppSync Local Resolver Sample
+# Cross Talk - Amazon Chime SDK Video Chat and AWS AppSync Local Resolver Sample
 
 ## Overview
 This repository contains source code for the full "Cross Talk" video chat Chime SDK sample.
