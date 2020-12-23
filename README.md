@@ -13,7 +13,7 @@ This sample aims to demonstrate a number of things:
 - Simple useage of the awesome new Chime SDK React components (https://github.com/aws/amazon-chime-sdk-component-library-react). The code in "Website/src/components/ModalChimeDialog.tsx" illustrates this.
 - An example of how to use the AppSync "None" data approach to resolvers to provide a direct pub/sub notification system over GraphQL without having persistent storage of the mutations (https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-none.html). The client-side interaction with AppSync is shown in "Website/src/containers/Home/HomeContainer.tsx", with the AppSync resolvers configured in "Infra/lib/stack/AppSyncStack.ts". The diagram below shows the way the front-end utilises the local resolver to notify GraphQL subscribers of mutations to the local resolver:
 
-<p style="text-align:center;"><img src="appsync-sequence-diagram.png" width="60%"/></p>
+<p align="center"><img src="appsync-sequence-diagram.png" width="60%"/></p>
 
 In addition to these points, this sample utilises the recently released NorthStar design system (https://northstar.aws-prototyping.cloud/) and the AWS Cloud Development Kit (https://aws.amazon.com/cdk/) for the deployment of all infrastructure.
 
@@ -27,7 +27,7 @@ The Chime SDK chat dialog that is displayed defaults to having the audio active 
 
 The key services utilised by this sample are shown in the simple architecture diagram below:
 
-<p style="text-align:center;"><img src="architecture.png" width="60%"/></p>
+<p align="center"><img src="architecture.png" width="60%"/></p>
 
 ## Bootstrap/Build/Deploy/Run
 Once you have locally cloned this repository, and assuming you have
