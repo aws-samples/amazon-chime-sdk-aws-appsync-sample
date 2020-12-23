@@ -1,0 +1,36 @@
+"""
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+SPDX-License-Identifier: MIT-0
+"""
+
+type chimeSession @aws_cognito_user_pools @aws_iam {
+    meeting: String
+    attendee: String
+    username: String
+}
+
+type Mutation {
+    startChimeSession(meeting: String!, attendee: String!, username: String!): chimeSession
+        @aws_iam
+    claimChimeSession(meeting: String!): String
+        @aws_iam
+}
+
+type Query {
+    stub: String
+        @deprecated(reason: "this is a None datasource and used only for subscriptions so this is a no-op")
+        @aws_iam
+}
+
+type Subscription {
+    chimeSessionStarted: chimeSession
+        @aws_subscribe(mutations: ["startChimeSession"])
+    chimeSessionClaimed: String
+        @aws_subscribe(mutations: ["claimChimeSession"])
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
