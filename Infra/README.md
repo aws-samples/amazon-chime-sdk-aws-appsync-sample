@@ -28,9 +28,23 @@ the command again.
 
 Make sure you have credentials for **ACCOUNT** (replace with your AWS account ID) in a profile
 named **account-profile**. For more information, see [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
-Run the following command in this `Infra` directory:
+
+Run the following commands in the root of the repository directory:
 
 ```sh
+cd Lambdas/Common
+npm install
+npm run build
+
+cd ../ChimeCallService
+npm install
+npm run build
+
+cd ../../Website
+npm install
+npm run build
+
+cd ../Infra
 npm install
 cdk bootstrap \
   --profile account-profile \
