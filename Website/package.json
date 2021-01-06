@@ -19,7 +19,7 @@
     "aws-appsync": "^4.0.1",
     "aws-northstar": "^1.0.21",
     "aws-sdk": "^2.755.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "graphql-tag": "^2.11.0",
     "install": "^0.13.0",
     "npm": "^7.3.0",
