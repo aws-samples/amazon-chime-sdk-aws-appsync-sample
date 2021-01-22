@@ -3,11 +3,11 @@
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Auth } from "aws-amplify";
 import AppLayout from "aws-northstar/layouts/AppLayout";
 import NorthStarThemeProvider from "aws-northstar/components/NorthStarThemeProvider";
 import HomeContainer from "../Home/HomeContainer";
 import { Amplify } from "aws-amplify";
+import { Auth } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import Header from "aws-northstar/components/Header";
 import ButtonDropdown from "aws-northstar/components/ButtonDropdown";
@@ -33,8 +33,7 @@ const {
     // @ts-ignore
 } = window["runConfig"];
 
-// Set up cognito auth, and configure our api endpoint
-Amplify.configure({
+const awsConfig = {
     Auth: {
         region,
         userPoolId,
@@ -43,7 +42,10 @@ Amplify.configure({
     },
     aws_appsync_graphqlEndpoint: graphqlEndpoint,
     aws_appsync_region: region,
-});
+};
+
+// Set up cognito auth, and configure our api endpoint
+Amplify.configure(awsConfig);
 
 const App: React.FC = () => {
     const [username, setUsername] = useState<string>();
