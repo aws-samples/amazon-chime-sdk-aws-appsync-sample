@@ -35,10 +35,14 @@
   "devDependencies": {
     "@types/node": "^12.19.12"
   },
+  "resolutions": {
+    "immer": ">=8.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": "react-app"
