@@ -215,6 +215,8 @@ const HomeContainer: React.FC = () => {
         } else {
             if (meetingSubscription) meetingSubscription.unsubscribe();
         }
+    // don't want to do updates for 'claimedSubscription', 'meetingSubscription', and 'username'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [callStarting, showChimeChat]);
 
     return (
