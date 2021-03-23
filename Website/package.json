@@ -23,6 +23,7 @@
     "graphql-tag": "^2.11.0",
     "install": "^0.13.0",
     "npm": "^7.5.0",
+    "npm-force-resolutions": "0.0.10",
     "query-string": "^6.13.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -35,10 +36,15 @@
   "devDependencies": {
     "@types/node": "^12.19.15"
   },
+  "resolutions": {
+    "ssri": ">=8.0.1",
+    "is-svg": ">=4.2.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
     "extends": "react-app"
