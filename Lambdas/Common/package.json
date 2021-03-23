@@ -9,7 +9,8 @@
     "test": "echo 'no tests' && exit 1",
     "build": "tsc",
     "eslint": "eslint --quiet --ext .ts --ext .tsx --ignore-pattern node_modules/ .",
-    "eslint:fix": "eslint --fix --ext .ts --ext .tsx ."
+    "eslint:fix": "eslint --fix --ext .ts --ext .tsx .",
+    "preinstall": "npx npm-force-resolutions"
   },
   "keywords": [],
   "author": "",
@@ -58,5 +59,8 @@
     "url-loader": "^2.1.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.7"
+  },
+  "resolutions": {
+    "ssri": ">=8.0.1"
   }
 }
