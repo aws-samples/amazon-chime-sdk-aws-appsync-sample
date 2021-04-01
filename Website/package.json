@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/ui-react": "^0.2.35",
+    "@aws-amplify/ui-react": "^1.0.6",
     "@aws-sdk/types": "^1.0.0-rc.10",
     "@aws-sdk/util-utf8-browser": "^1.0.0-rc.8",
     "@aws-sdk/util-utf8-node": "^1.0.0-rc.8",
@@ -14,27 +14,27 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
     "amazon-chime-sdk-component-library-react": "^1.6.1",
-    "amazon-chime-sdk-js": "^2.4.1",
-    "aws-amplify": "^3.3.15",
+    "amazon-chime-sdk-js": "^2.6.2",
+    "aws-amplify": "^3.3.26",
     "aws-appsync": "^4.0.2",
-    "aws-northstar": "^1.0.29",
-    "aws-sdk": "^2.834.0",
+    "aws-northstar": "^1.0.44",
+    "aws-sdk": "^2.877.0",
     "axios": "^0.21.1",
     "graphql-tag": "^2.11.0",
     "install": "^0.13.0",
-    "npm": "^7.5.0",
+    "npm": "^7.7.6",
     "npm-force-resolutions": "0.0.10",
     "query-string": "^6.13.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
-    "styled-components": "^5.2.1",
+    "styled-components": "^5.2.3",
     "styled-system": "^5.1.5",
     "typescript": "3.9.7"
   },
   "devDependencies": {
-    "@types/node": "^12.19.15"
+    "@types/node": "^12.20.7"
   },
   "resolutions": {
     "ssri": ">=8.0.1",

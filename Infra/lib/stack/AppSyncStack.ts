@@ -45,14 +45,17 @@ export class AppSyncStack extends cdk.Stack {
         });
 
         const noneDataSource = api.addNoneDataSource("NoneDataSource");
+
         const meetingRequestTemplate = MappingTemplate.fromString(
-            '{"version": "2017-02-28", "payload": { "meeting": "${ctx.args.meeting}", "attendee": "${ctx.args.attendee}", "username": "${ctx.args.username}" } }'
+            '{"version": "2018-05-29", "payload": { "meeting": "${ctx.args.meeting}", "attendee": "${ctx.args.attendee}", "username": "${ctx.args.username}" } }'
         );
+
         const meetingResponseTemplate = MappingTemplate.fromString(
             "$util.toJson($context.result)"
         );
+
         const claimChimeSessionRequestTemplate = MappingTemplate.fromString(
-            '{"version": "2017-02-28", "payload": "${ctx.args.meeting}"}'
+            '{"version": "2018-05-29", "payload": "${ctx.args.meeting}"}'
         );
 
         noneDataSource.createResolver({
