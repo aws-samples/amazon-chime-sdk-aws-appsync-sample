@@ -7,13 +7,14 @@
     "cdk": "cdk",
     "deploy-sandbox": "cdk -a cdk.out/assembly-Sandbox deploy '*' --require-approval never",
     "lint": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx ./src",
-    "lint:fix": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx --fix ./src"
+    "lint:fix": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx --fix ./src",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "@types/node": "10.17.5",
     "@typescript-eslint/eslint-plugin": "3.9.0",
     "@typescript-eslint/parser": "3.9.0",
-    "aws-cdk": "^1.87.1",
+    "aws-cdk": "^1.95.1",
     "eslint": "7.6.0",
     "eslint-plugin-header": "3.0.0",
     "lint-staged": "10.2.11",
@@ -28,17 +29,21 @@
     ]
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.87.1",
-    "@aws-cdk/aws-appsync": "^1.87.1",
-    "@aws-cdk/aws-cloudformation": "^1.87.1",
-    "@aws-cdk/aws-cognito": "^1.87.1",
-    "@aws-cdk/aws-iam": "^1.87.1",
-    "@aws-cdk/aws-lambda": "^1.87.1",
-    "@aws-cdk/aws-s3": "^1.87.1",
-    "@aws-cdk/aws-s3-deployment": "^1.87.1",
-    "@aws-cdk/core": "^1.87.1",
-    "@aws-cdk/custom-resources": "^1.87.1",
+    "@aws-cdk/aws-apigateway": "^1.95.1",
+    "@aws-cdk/aws-appsync": "^1.95.1",
+    "@aws-cdk/aws-cloudformation": "^1.95.1",
+    "@aws-cdk/aws-cognito": "^1.95.1",
+    "@aws-cdk/aws-iam": "^1.95.1",
+    "@aws-cdk/aws-lambda": "^1.95.1",
+    "@aws-cdk/aws-s3": "^1.95.1",
+    "@aws-cdk/aws-s3-deployment": "^1.95.1",
+    "@aws-cdk/core": "^1.95.1",
+    "@aws-cdk/custom-resources": "^1.95.1",
     "aws-sdk": "2.731.0",
+    "npm-force-resolutions": "0.0.10",
     "source-map-support": "0.5.19"
+  },
+  "resolutions": {
+    "netmask": ">=2.0.1"
   }
 }
