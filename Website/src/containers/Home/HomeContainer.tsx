@@ -226,7 +226,7 @@ const HomeContainer: React.FC = () => {
                     {newChimeSessionAvailable && !showChimeChat ? (
                         <Alert
                             type="info"
-                            dismissable={true}
+                            dismissible
                             buttonText={`Answer Call from ${otherUsername}`}
                             onDismiss={() => setNewChimeSessionAvailable(false)}
                             onButtonClick={joinChimeCall}
