@@ -39,7 +39,7 @@
     "@aws-cdk/aws-s3-deployment": "^1.95.1",
     "@aws-cdk/core": "^1.95.1",
     "@aws-cdk/custom-resources": "^1.95.1",
-    "aws-sdk": "2.731.0",
+    "aws-sdk": "2.814.0",
     "npm-force-resolutions": "0.0.10",
     "source-map-support": "0.5.19"
   },
