@@ -21,9 +21,6 @@ module.exports = {
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({
-            tsconfig: path.resolve(__dirname, './tsconfig.json'),
-            checkSyntacticErrors: true,
-            silent: false
         }),
     ],
     module: {
