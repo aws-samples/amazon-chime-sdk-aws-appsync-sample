@@ -6,9 +6,12 @@
 set -e;
 
 CDK_PROFILE=default
+
 while [[ "$#" -gt 0 ]]; do case $1 in
   --profile) CDK_PROFILE="$2"; shift;;
 esac; shift; done
+
+echo "Using AWS profile '$CDK_PROFILE'"
 
 # Build all the lambdas
 cd ../Lambdas/Common && npm i && npm run build
