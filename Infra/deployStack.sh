@@ -22,4 +22,4 @@ cd ../Website && npm i && npm run build
 cd ../Infra && npm i && npm run build
 
 # Synth and deploy the sandbox stack
-cdk --profile $CDK_PROFILE synth && cdk --profile $CDK_PROFILE deploy '*' --require-approval never
+cdk --profile $CDK_PROFILE synth && cdk --profile $CDK_PROFILE deploy --all --require-approval never
