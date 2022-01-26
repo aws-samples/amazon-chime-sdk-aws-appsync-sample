@@ -15,7 +15,7 @@
     "@typescript-eslint/eslint-plugin": "3.9.0",
     "@typescript-eslint/parser": "3.9.0",
     "aws-cdk": "^1.95.1",
-    "eslint": "7.6.0",
+    "eslint": "^7.32.0",
     "eslint-plugin-header": "3.0.0",
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
@@ -44,6 +44,7 @@
     "source-map-support": "0.5.19"
   },
   "resolutions": {
-    "netmask": ">=2.0.1"
+    "netmask": ">=2.0.1",
+    "ansi-regex": ">=5.0.1"
   }
 }

@@ -11,6 +11,7 @@ import { useMeetingManager } from "amazon-chime-sdk-component-library-react";
 import ModalChimeDialog from "../../components/Controls/ModalChimeDialog";
 import AWSAppSyncClient from "aws-appsync";
 import gql from "graphql-tag";
+import VideoCallOutlined from '@material-ui/icons/VideoCallOutlined';
 
 const {
     region,
@@ -247,8 +248,8 @@ const HomeContainer: React.FC = () => {
                     <Heading variant="h5">press the button to start a Chime call</Heading>
                     <div style={{ marginTop: 20 }}>
                         <Inline>
-                            <Button onClick={startChimeCall} icon="AccountCircleTwoTone" loading={callStarting}>
-                                Start Chat!
+                            <Button onClick={startChimeCall} icon={VideoCallOutlined} iconAlign="right" loading={callStarting}>
+                                Start Call
                             </Button>
                         </Inline>
                     </div>
