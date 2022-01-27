@@ -19,7 +19,7 @@ cd ../ChimeCallService && npm i && npm run build
 cd ..
 
 # Build the website
-cd ../Website && npm i && npm run build
+cd ../Website && npm update && npm i && npm run build
 
 # Build the infrastructure cdk code
 cd ../Infra && npm i && npm run build
