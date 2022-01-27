@@ -23,7 +23,6 @@
     "graphql-tag": "^2.12.4",
     "install": "^0.13.0",
     "npm": "^7.17.0",
-    "npm-force-resolutions": "0.0.10",
     "query-string": "^6.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -35,30 +34,28 @@
   },
   "devDependencies": {
     "@types/node": "^12.20.15",
-    "browserslist": "^4.16.6",
-    "postcss": "^8.4.5"
-  },
-  "peerDependencies": {
-    "postcss": "^8.4.5"
+    "browserslist": "^4.16.6"
   },
   "resolutions": {
-    "ssri": ">=8.0.1",
-    "is-svg": ">=4.2.2",
-    "glob-parent": ">=5.1.2",
-    "normalize-url": ">=4.5.1",
-    "css-what": ">=5.0.1",
-    "immer": ">=9.0.6",
-    "tar": ">=6.1.9",
-    "prismjs": ">=1.25.0",
-    "node-forge": ">=1.0.0",
-    "nth-check": ">=2.0.1",
-    "postcss": ">=8.4.5"
+    "ssri": "^8.0.1",
+    "is-svg": "^4.2.2",
+    "glob-parent": "^5.1.2",
+    "normalize-url": "^4.5.1",
+    "css-what": "^5.0.1",
+    "immer": "^9.0.6",
+    "tar": "^6.1.9",
+    "prismjs": "^1.25.0",
+    "node-forge": "^1.0.0",
+    "nth-check": "^2.0.1",
+    "axios": "^0.21.2",
+    "ansi-regex": "^5.0.1",
+    "browserslist": "^4.16.5",
+    "postcss": "^8.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "preinstall": "npx npm-force-resolutions"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

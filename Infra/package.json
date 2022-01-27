@@ -7,8 +7,7 @@
     "cdk": "cdk",
     "deploy-sandbox": "cdk -a cdk.out/assembly-Sandbox deploy '*' --require-approval never",
     "lint": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx ./src",
-    "lint:fix": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx --fix ./src",
-    "preinstall": "npx npm-force-resolutions"
+    "lint:fix": "eslint --ext .ts --ext .tsx --ext .js --ext .jsx --fix ./src"
   },
   "devDependencies": {
     "@types/node": "10.17.5",
@@ -40,11 +39,10 @@
     "@aws-cdk/core": "^1.95.1",
     "@aws-cdk/custom-resources": "^1.95.1",
     "aws-sdk": "2.814.0",
-    "npm-force-resolutions": "0.0.10",
     "source-map-support": "0.5.19"
   },
   "resolutions": {
-    "netmask": ">=2.0.1",
-    "ansi-regex": ">=5.0.1"
+    "netmask": "^2.0.1",
+    "ansi-regex": "^5.0.1"
   }
 }

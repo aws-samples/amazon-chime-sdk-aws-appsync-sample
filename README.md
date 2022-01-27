@@ -53,19 +53,20 @@ Run the following commands in the root of the repository directory:
 
 ```sh
 cd Lambdas/Common
-npm install
-npm run build
+yarn
+yarn build
 
 cd ../ChimeCallService
-npm install
-npm run build
+yarn
+yarn build
 
 cd ../../Website
-npm install
-npm run build
+yarn
+yarn build
 
 cd ../Infra
-npm install
+yarn
+yarn build
 cdk bootstrap \
   --profile account-profile \
   --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
