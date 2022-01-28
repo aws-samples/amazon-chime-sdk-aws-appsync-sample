@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 // ... so the webpack5 config used by react-scripts 5.0.0 
 // doesn't like .mjs files, so we use react-scripts-rewire
 // to add support for this (the aws appsync modules, for
