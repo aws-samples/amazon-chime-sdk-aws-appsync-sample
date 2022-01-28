@@ -1,18 +1,20 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AppLayout from "aws-northstar/layouts/AppLayout";
-import NorthStarThemeProvider from "aws-northstar/components/NorthStarThemeProvider";
+import React, { useState } from "react";
 import HomeContainer from "../Home/HomeContainer";
-import { Amplify } from "aws-amplify";
-import { Auth } from "aws-amplify";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import Header from "aws-northstar/components/Header";
-import ButtonDropdown from "aws-northstar/components/ButtonDropdown";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, MeetingProvider } from "amazon-chime-sdk-component-library-react";
+import { darkTheme, MeetingProvider } from "amazon-chime-sdk-component-library-react";
+import { AmplifyAuthenticator, AmplifySignIn } from '@aws-amplify/ui-react';
+import {
+  AppLayout,
+  ButtonDropdown,
+  Header,
+  NorthStarThemeProvider,
+} from 'aws-northstar';
+import Amplify, { Auth } from 'aws-amplify';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const menuItems = [
     {
@@ -48,37 +50,52 @@ const awsConfig = {
 Amplify.configure(awsConfig);
 
 const App: React.FC = () => {
-    const [username, setUsername] = useState<string>();
-    useEffect(() => {
-        (async () => {
-            try {
-                const user = await Auth.currentAuthenticatedUser();
-                setUsername(user.username);
-            } catch (e) {
-                // No user currently logged in
-            }
-        })();
-    }, []);
+    const [user, setUser] = useState<any>();
 
-    const rightContent = <ButtonDropdown content={username} items={menuItems} variant="primary" />;
+    const rightContent = <ButtonDropdown darkTheme content={user?.attributes?.given_name || user?.username} items={menuItems} />;
 
     return (
-        <NorthStarThemeProvider>
-            <ThemeProvider theme={lightTheme}>
-                <Router>
-                    <Header title="Cross Talk" rightContent={rightContent} />
-                    <MeetingProvider>
-                        <AppLayout header={<div></div>}>
-                            <Switch>
-                                <Route exact path="/" component={HomeContainer} />
-                            </Switch>
-                        </AppLayout>
-                    </MeetingProvider>
-                </Router>
-            </ThemeProvider>
-        </NorthStarThemeProvider>
+        <AmplifyAuthenticator
+            handleAuthStateChange={async () => {
+                try {
+                    setUser(await Auth.currentAuthenticatedUser());
+                } catch (err) {
+                    setUser(undefined);
+                }
+            }}
+        >
+            <AmplifySignIn slot="sign-in">
+                <div slot="secondary-footer-content"></div>
+                <div slot="federated-buttons"></div>
+            </AmplifySignIn>
+  
+            {user ? (
+                <NorthStarThemeProvider>
+                    <ThemeProvider theme={darkTheme}>
+                        <Router>
+                            <MeetingProvider>
+                                <AppLayout
+                                    header={
+                                        <Header
+                                            title="Cross Talk"
+                                            rightContent={rightContent}
+                                        />
+                                    }
+                                >
+                                    <Switch>
+                                        <Route exact path="/" component={HomeContainer} />
+                                    </Switch>
+                                </AppLayout>
+                            </MeetingProvider>
+                        </Router>
+                    </ThemeProvider>
+                </NorthStarThemeProvider>
+            ) : (
+                <></>
+            )}
+        </AmplifyAuthenticator>
     );
-};
+  };
 
 // Temporarily restrict access via a login page. For unauthenticated
 // access, replace with the commented line below

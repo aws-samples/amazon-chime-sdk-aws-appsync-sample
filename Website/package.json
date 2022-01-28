@@ -37,20 +37,13 @@
     "browserslist": "^4.16.6"
   },
   "resolutions": {
-    "ssri": "^8.0.1",
-    "is-svg": "^4.2.2",
-    "glob-parent": "^5.1.2",
-    "normalize-url": "^4.5.1",
-    "css-what": "^5.0.1",
-    "immer": "^9.0.6",
-    "tar": "^6.1.9",
-    "prismjs": "^1.25.0",
-    "node-forge": "^1.0.0",
-    "nth-check": "^2.0.1",
     "axios": "^0.21.2",
     "ansi-regex": "^5.0.1",
+    "node-forge": "^1.0.0",
+    "nth-check": "^2.0.1",
+    "glob-parent": "^5.1.2",
     "browserslist": "^4.16.5",
-    "postcss": "^8.2.1"
+    "immer": "^9.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -58,7 +51,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

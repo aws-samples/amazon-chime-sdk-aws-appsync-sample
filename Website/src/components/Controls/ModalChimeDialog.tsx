@@ -13,15 +13,13 @@ import {
 
 import {
     Box,
+    Button,
     Grid,
-    Modal
+    Modal,
+    Toggle
 } from "aws-northstar";
 
-import {
-    Button,
-    ButtonGroup,
-    Typography
-} from "@material-ui/core";
+import Text from 'aws-northstar/components/Text';
 
 interface ModalChimeDialogProperties {
     onEndCall: any;
@@ -44,30 +42,38 @@ const ModalChimeDialog: React.FC<ModalChimeDialogProperties> = ({ onEndCall, inf
             <RemoteVideo tileId={tileId} />
         </div>
     ));
-
+    
     return (
         <Modal title="Chime SDK Video Call" visible={true} onClose={onEndCall}>
             <Grid container alignContent="center" spacing={1}>
                 <Grid item xs={12}>
                     <div className={`grid grid--size-${tiles.length}`}>
                         {tiles.length ? videos :
-                            <Box style={{ height: "15rem", width: '100%', margin: '2rem auto' }}>
-                                <Typography align='center'>No remote videos available</Typography>
+                            <Box style={{ height: "15rem", width: '100%', margin: '2rem auto' }} borderColor='black' border={'1px dashed grey'}>
+                                <Text>No remote videos available</Text>
                             </Box>}
                     </div>
                     <div style={{ height: "5rem", width: '9rem', margin: '2rem auto' }}>
                         {isVideoEnabled ? <PreviewVideo /> :
                             <Box height={'100%'} borderColor='black' border={'1px dashed grey'}>
-                                <Typography align='center'>Video disabled</Typography>
+                                <Text>Video disabled</Text>
                             </Box>}
                     </div>
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
-                    <ButtonGroup color='primary'>
-                        <Button style={{ minWidth: '140px', width: '140px' }} onClick={toggleVideo}>{isVideoEnabled ? 'Tun Video Off' : 'Turn Video On'}</Button>
-                        <Button style={{ minWidth: '140px', width: '140px' }} onClick={toggleMute}>{muted ? 'Unmute' : 'Mute'}</Button>
-                        <Button style={{ minWidth: '140px', width: '140px' }} onClick={onEndCall}>Finish</Button>
-                    </ButtonGroup>
+                    <Grid container alignContent="center" spacing={1}>
+                        <Grid item xs={3}>
+                            <Toggle label={isVideoEnabled ? "Video Enabled" : "Video Disabled"} onChange={toggleVideo}/>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Toggle label={muted ? "Microphone Muted" : "Microphone Unmuted"} onChange={toggleMute}/>
+                        </Grid>
+                        <Grid item xs={3}>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Button variant={"primary"} onClick={onEndCall}>Finish</Button>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
             { infoPanel ? <Grid item xs={12}><div style={{ height: 20 }}></div></Grid> : null}
