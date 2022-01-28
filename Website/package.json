@@ -27,14 +27,15 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.0",
     "styled-components": "^5.3.0",
     "styled-system": "^5.1.5",
     "typescript": "3.9.7"
   },
   "devDependencies": {
     "@types/node": "^12.20.15",
-    "browserslist": "^4.16.6"
+    "browserslist": "^4.16.6",
+    "react-app-rewired": "^2.1.11"
   },
   "resolutions": {
     "axios": "^0.21.2",
@@ -43,12 +44,13 @@
     "nth-check": "^2.0.1",
     "glob-parent": "^5.1.2",
     "browserslist": "^4.16.5",
+    "postcss": "^8.2.1",
     "immer": "^9.0.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
