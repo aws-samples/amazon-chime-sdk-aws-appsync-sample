@@ -9,8 +9,7 @@
     "test": "echo 'no tests' && exit 1",
     "build": "tsc",
     "eslint": "eslint --quiet --ext .ts --ext .tsx --ignore-pattern node_modules/ .",
-    "eslint:fix": "eslint --fix --ext .ts --ext .tsx .",
-    "preinstall": "npx npm-force-resolutions"
+    "eslint:fix": "eslint --fix --ext .ts --ext .tsx ."
   },
   "keywords": [],
   "author": "",
@@ -60,8 +59,8 @@
     "webpack-cli": "^4.9.2"
   },
   "resolutions": {
-    "glob-parent": ">=5.1.2",
-    "normalize-url": ">=4.5.1",
-    "ssri": ">=8.0.1"
+    "glob-parent": "^5.1.2",
+    "normalize-url": "^4.5.1",
+    "ssri": "^8.0.1"
   }
 }

@@ -2,11 +2,9 @@
 // SPDX-License-Identifier: MIT-0
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Alert, Button, ColumnLayout, Inline, Stack } from "aws-northstar";
-import { Card } from "@material-ui/core";
+import { Alert, Button, Card, ColumnLayout, Inline, Stack } from "aws-northstar";
 import { Auth } from "aws-amplify";
 import { ChimeCallServiceClient } from "../../api/ChimeCallServiceClient";
-import Heading from "aws-northstar/components/Heading";
 import { useMeetingManager } from "amazon-chime-sdk-component-library-react";
 import ModalChimeDialog from "../../components/Controls/ModalChimeDialog";
 import AWSAppSyncClient from "aws-appsync";
@@ -217,7 +215,7 @@ const HomeContainer: React.FC = () => {
             if (meetingSubscription) meetingSubscription.unsubscribe();
         }
     // don't want to do updates for 'claimedSubscription', 'meetingSubscription', and 'username'
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
     }, [callStarting, showChimeChat]);
 
     return (
@@ -236,23 +234,20 @@ const HomeContainer: React.FC = () => {
                         </Alert>
                     ) : null}
                 </Stack>
-                <Card style={{ padding: 20 }}>
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                        }}
-                    >
-                        <Heading variant="h2">Start a call</Heading>
-                    </div>
-                    <Heading variant="h5">press the button to start a Chime call</Heading>
-                    <div style={{ marginTop: 20 }}>
-                        <Inline>
-                            <Button onClick={startChimeCall} icon={VideoCallOutlined} iconAlign="right" loading={callStarting}>
-                                Start Call
-                            </Button>
-                        </Inline>
-                    </div>
+                <Card                     
+                    title="Start a call"
+                    titleTypographyProps={{ variant: 'h2', gutterBottom: true }}
+                    subtitle="press the button to initiate a Chime call"
+                >
+                    <Inline>
+                        <Button 
+                            onClick={startChimeCall}
+                            icon={VideoCallOutlined}
+                            iconAlign="right" loading={callStarting}
+                        >
+                            Start Call
+                        </Button>
+                    </Inline>
                     {showChimeChat ? <ModalChimeDialog onEndCall={finishChimeCall} /> : null}
                 </Card>
             </Stack>

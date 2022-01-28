@@ -18,7 +18,7 @@ package. This will point your locally running UI resources in the sandbox stack.
 
 ### Start the local dev server
 
-#### `npm run start`
+#### `yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -28,7 +28,7 @@ You will also see any lint errors in the console.
 
 ## Production Build
 
-#### `npm run build`
+#### `yarn && yarn build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -40,7 +40,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Eject from `create-react-app`
 
-#### `npm run eject`
+#### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

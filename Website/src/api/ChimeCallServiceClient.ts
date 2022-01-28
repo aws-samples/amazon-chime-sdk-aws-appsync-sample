@@ -13,12 +13,13 @@ const {
  * for further interaction from the diagnostic and contact card
  */
 export class ChimeCallServiceClient {
-    public createChimeSession = async (): Promise<string | undefined> => {
+    async createChimeSession(): Promise<string | undefined> { 
         try {
             const response = await sigv4SignedGet(`${apiUrl}call-create`);
             return await response.json();
         } catch (e) {
             console.error(e);
+            return undefined;
         }
-    };
-}
+    }
+};

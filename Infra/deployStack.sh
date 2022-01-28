@@ -14,15 +14,15 @@ esac; shift; done
 echo "Using AWS profile '$CDK_PROFILE'"
 
 # Build all the lambdas
-cd ../Lambdas/Common && npm i && npm run build
-cd ../ChimeCallService && npm i && npm run build
+cd ../Lambdas/Common && yarn && yarn build
+cd ../ChimeCallService && yarn && yarn build
 cd ..
 
 # Build the website
-cd ../Website && npm update && npm i && npm run build
+cd ../Website && yarn && yarn build
 
 # Build the infrastructure cdk code
-cd ../Infra && npm i && npm run build
+cd ../Infra && yarn && yarn build
 
 # Synth and deploy the sandbox stack
 cdk --profile $CDK_PROFILE synth && cdk --profile $CDK_PROFILE deploy --all --require-approval never

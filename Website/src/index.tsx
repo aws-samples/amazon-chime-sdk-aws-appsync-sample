@@ -7,11 +7,27 @@ import "./index.css";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 
+
+import Amplify from 'aws-amplify';
+
+const { region, userPoolId, userPoolWebClientId, identityPoolId } =
+  // @ts-ignore
+  window['runConfig'];
+
+Amplify.configure({
+  Auth: {
+    region: region,
+    userPoolId: userPoolId,
+    userPoolWebClientId: userPoolWebClientId,
+    identityPoolId: identityPoolId,
+  }
+});
+
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById("root")
+  <React.StrictMode>
+      <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
