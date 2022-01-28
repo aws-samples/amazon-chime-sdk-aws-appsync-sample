@@ -50,7 +50,7 @@ const ModalChimeDialog: React.FC<ModalChimeDialogProperties> = ({ onEndCall, inf
                     <div className={`grid grid--size-${tiles.length}`}>
                         {tiles.length ? videos :
                             <Box style={{ height: "15rem", width: '100%', margin: '2rem auto' }} borderColor='black' border={'1px dashed grey'}>
-                                <Text>No remote videos available</Text>
+                                <Text>No remote video available</Text>
                             </Box>}
                     </div>
                     <div style={{ height: "5rem", width: '9rem', margin: '2rem auto' }}>
