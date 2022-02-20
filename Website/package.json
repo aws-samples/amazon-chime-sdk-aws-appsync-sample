@@ -45,7 +45,8 @@
     "glob-parent": "^5.1.2",
     "browserslist": "^4.16.5",
     "postcss": "^8.2.1",
-    "immer": "^9.0.6"
+    "immer": "^9.0.6",
+    "follow-redirects": "^1.14.8"
   },
   "scripts": {
     "start": "react-app-rewired start",
