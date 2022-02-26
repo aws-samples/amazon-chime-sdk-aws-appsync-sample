@@ -46,7 +46,8 @@
     "browserslist": "^4.16.5",
     "postcss": "^8.2.1",
     "immer": "^9.0.6",
-    "follow-redirects": "^1.14.8"
+    "follow-redirects": "^1.14.8",
+    "prismjs": "^1.27.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
