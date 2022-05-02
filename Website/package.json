@@ -47,7 +47,9 @@
     "postcss": "^8.2.1",
     "immer": "^9.0.6",
     "follow-redirects": "^1.14.8",
-    "prismjs": "^1.27.0"
+    "prismjs": "^1.27.0",
+    "async": "^2.6.4",
+    "ejs": "^3.1.7"
   },
   "scripts": {
     "start": "react-app-rewired start",
