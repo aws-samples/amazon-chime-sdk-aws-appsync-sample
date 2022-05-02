@@ -1,6 +1,7 @@
 {
   "name": "CrossTalkInfra",
   "version": "0.1.0",
+  "license": "MIT-0",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
