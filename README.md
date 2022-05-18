@@ -83,7 +83,7 @@ all the lambdas, the website, the infrastructure and then initiates the CDK depl
 
 ### Run
 
-Once the deployment has finished, you can open the CloudFront URL printed by the deployment script or run from a local Node session. To run a local instance of the React front-end, you will need to grab a copy of the "runtime-config.js" file that the CDK deployment process created (in the S3 static website bucket) and copy it to "Website/public".
+Once the deployment has finished, you can open the CloudFront URL printed by the deployment script or run from a local Node session. To run a local instance of the React front-end, you will need to grab a copy of the "runtime-config.js" file that the CDK deployment process created (in the S3 static website bucket) and copy it to "Website/public". Note: account self-registration from the sign-in page has been disabled; to register a new account, open the relevant Cognito user pool in the AWS console and create a new user.
 
 
 ## Security
