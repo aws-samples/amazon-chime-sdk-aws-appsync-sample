@@ -50,7 +50,8 @@
     "prismjs": "^1.27.0",
     "async": "^2.6.4",
     "ejs": "^3.1.7",
-    "protobufjs": "^6.11.3"
+    "protobufjs": "^6.11.3",
+    "d3-color": "^3.1.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
