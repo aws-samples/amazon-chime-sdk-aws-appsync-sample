@@ -61,6 +61,8 @@
   "resolutions": {
     "glob-parent": "^5.1.2",
     "normalize-url": "^4.5.1",
-    "ssri": "^8.0.1"
-  }
+    "ssri": "^8.0.1",
+    "minimatch": "^3.0.5",
+    "loader-utils": "^2.0.3"
+}
 }
