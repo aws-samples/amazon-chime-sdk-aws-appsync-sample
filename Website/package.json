@@ -51,7 +51,9 @@
     "async": "^2.6.4",
     "ejs": "^3.1.7",
     "protobufjs": "^6.11.3",
-    "d3-color": "^3.1.0"
+    "d3-color": "^3.1.0",
+    "minimatch": "^3.0.5",
+    "loader-utils": "^2.0.3"
   },
   "scripts": {
     "start": "react-app-rewired start",
