@@ -1,12 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import {Construct, Stage, StageProps, Tags} from "@aws-cdk/core";
-import {CognitoAuthStack} from "./stack/CognitoAuthStack";
-import {StaticWebsiteStack} from "./stack/StaticWebsiteStack";
-import {ApiStack} from "./stack/ApiStack";
-import {AppSyncStack} from "./stack/AppSyncStack";
-import {UserPoolStack} from "./stack/UserPoolStack";
+import { Construct } from "constructs";
+import { CognitoAuthStack } from "./stack/CognitoAuthStack";
+import { StaticWebsiteStack } from "./stack/StaticWebsiteStack";
+import { ApiStack } from "./stack/ApiStack";
+import { AppSyncStack } from "./stack/AppSyncStack";
+import { UserPoolStack } from "./stack/UserPoolStack";
 
 export class AppStacks extends Construct {
     constructor(scope: Construct, id: string) {

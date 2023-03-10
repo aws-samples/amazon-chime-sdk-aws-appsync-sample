@@ -1,11 +1,11 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { Construct, Duration, Stack } from "@aws-cdk/core";
-import * as apigateway from "@aws-cdk/aws-apigateway";
-import * as iam from "@aws-cdk/aws-iam";
-import { AuthorizationType } from "@aws-cdk/aws-apigateway";
-import * as lambda from "@aws-cdk/aws-lambda";
+import { Construct } from "constructs";
+import { Duration, Stack } from "aws-cdk-lib";
+import * as apigateway from "aws-cdk-lib/aws-apigateway";
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as lambda from "aws-cdk-lib/aws-lambda";
 import { getLambdaPath } from "../utils/lambda";
 
 export interface MeetingProviderProps {
@@ -71,7 +71,7 @@ export default class MeetingProvider extends Construct {
         const lambdaIntegration = new apigateway.LambdaIntegration(lambdaFn);
 
         apiResource.addMethod("GET", lambdaIntegration, {
-            authorizationType: AuthorizationType.IAM,
+            authorizationType: apigateway.AuthorizationType.IAM,
         });
 
         this.api = {

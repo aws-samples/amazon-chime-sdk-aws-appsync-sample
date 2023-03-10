@@ -1,10 +1,11 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import {Construct, Stack} from "@aws-cdk/core";
-import {MeetingProviderApi} from "../constructs/MeetingProvider";
-import * as cognito from "@aws-cdk/aws-cognito";
-import * as iam from "@aws-cdk/aws-iam";
+import { Construct } from "constructs";
+import { Stack } from "aws-cdk-lib";
+import { MeetingProviderApi } from "../constructs/MeetingProvider";
+import * as cognito from "aws-cdk-lib/aws-cognito";
+import * as iam from "aws-cdk-lib/aws-iam";
 
 export interface CognitoAuthStackProps {
   meetingProviderApi: MeetingProviderApi;
@@ -88,33 +89,6 @@ export class CognitoAuthStack extends Stack {
                 resources: [`${props.graphqlApiArn}/*`]
               })
             );
-
-            // Transcribe audio
-            role.addToPolicy(new iam.PolicyStatement({
-                effect: iam.Effect.ALLOW,
-                actions: [
-                    'transcribe:StartStreamTranscriptionWebsocket',
-                ],
-                resources: ['*'],
-            }));
-
-            // Text to speech
-            role.addToPolicy(new iam.PolicyStatement({
-                effect: iam.Effect.ALLOW,
-                actions: [
-                    'polly:SynthesizeSpeech',
-                ],
-                resources: ['*'],
-            }));
-
-            // Translation
-            role.addToPolicy(new iam.PolicyStatement({
-                effect: iam.Effect.ALLOW,
-                actions: [
-                    'translate:TranslateText',
-                ],
-                resources: ['*'],
-            }));
 
             role.addToPolicy(new iam.PolicyStatement({
                 effect: iam.Effect.ALLOW,
