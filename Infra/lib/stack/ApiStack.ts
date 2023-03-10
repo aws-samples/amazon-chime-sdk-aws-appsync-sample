@@ -1,9 +1,9 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import { Construct, Stack } from "@aws-cdk/core";
-import { PolicyStatement } from "@aws-cdk/aws-iam";
-import * as iam from "@aws-cdk/aws-iam";
+import { Construct } from "constructs";
+import { Stack } from "aws-cdk-lib";
+import * as iam from "aws-cdk-lib/aws-iam";
 import MeetingProvider, { MeetingProviderApi } from "../constructs/MeetingProvider";
 
 export interface ApiStackProps {
@@ -23,7 +23,7 @@ export class ApiStack extends Stack {
             lambdaAssetDirectory: "ChimeCallService",
             environment: { GRAPHQL_ENDPOINT: props.graphqlEndpoint },
             policyStatements: [
-                new PolicyStatement({
+                new iam.PolicyStatement({
                     effect: iam.Effect.ALLOW,
                     actions: ["execute-api:Invoke", "chime:CreateMeeting", "chime:CreateAttendee"],
                     resources: ["*"],

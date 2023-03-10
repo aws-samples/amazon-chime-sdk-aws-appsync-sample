@@ -14,7 +14,7 @@
     "@types/node": "10.17.5",
     "@typescript-eslint/eslint-plugin": "3.9.0",
     "@typescript-eslint/parser": "3.9.0",
-    "aws-cdk": "^1.95.1",
+    "aws-cdk-lib": "^2.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-header": "3.0.0",
     "lint-staged": "10.2.11",
@@ -29,16 +29,8 @@
     ]
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.95.1",
-    "@aws-cdk/aws-appsync": "^1.95.1",
-    "@aws-cdk/aws-cloudformation": "^1.95.1",
-    "@aws-cdk/aws-cognito": "^1.95.1",
-    "@aws-cdk/aws-iam": "^1.95.1",
-    "@aws-cdk/aws-lambda": "^1.95.1",
-    "@aws-cdk/aws-s3": "^1.95.1",
-    "@aws-cdk/aws-s3-deployment": "^1.95.1",
-    "@aws-cdk/core": "^1.95.1",
-    "@aws-cdk/custom-resources": "^1.95.1",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0",
     "aws-sdk": "2.814.0",
     "source-map-support": "0.5.19"
   },

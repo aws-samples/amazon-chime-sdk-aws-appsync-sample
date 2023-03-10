@@ -1,14 +1,11 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import * as cdk from "@aws-cdk/core";
-import * as cognito from "@aws-cdk/aws-cognito";
-import * as appsync from "@aws-cdk/aws-appsync";
+import { Construct } from "constructs";
+import * as cdk from "aws-cdk-lib";
+import * as cognito from "aws-cdk-lib/aws-cognito";
+import * as appsync from "aws-cdk-lib/aws-appsync";
 import * as path from "path";
-import {
-    MappingTemplate
-} from "@aws-cdk/aws-appsync";
-import { Construct } from "@aws-cdk/core";
 
 export interface AppsyncStackProps extends cdk.StackProps {
     readonly userPool: cognito.UserPool;
@@ -29,7 +26,7 @@ export class AppSyncStack extends cdk.Stack {
         // Creates the AppSync API
         const api = new appsync.GraphqlApi(this, "ChimeSessionEventsApi", {
             name: "chime-session-api",
-            schema: appsync.Schema.fromAsset(
+            schema: appsync.SchemaFile.fromAsset(
                 path.join(__dirname, "../graphql/schema.graphql")
             ),
             authorizationConfig: {
@@ -46,47 +43,47 @@ export class AppSyncStack extends cdk.Stack {
 
         const noneDataSource = api.addNoneDataSource("NoneDataSource");
 
-        const meetingRequestTemplate = MappingTemplate.fromString(
+        const meetingRequestTemplate = appsync.MappingTemplate.fromString(
             '{"version": "2018-05-29", "payload": { "meeting": "${ctx.args.meeting}", "attendee": "${ctx.args.attendee}", "username": "${ctx.args.username}" } }'
         );
 
-        const meetingResponseTemplate = MappingTemplate.fromString(
+        const meetingResponseTemplate = appsync.MappingTemplate.fromString(
             "$util.toJson($context.result)"
         );
 
-        const claimChimeSessionRequestTemplate = MappingTemplate.fromString(
+        const claimChimeSessionRequestTemplate = appsync.MappingTemplate.fromString(
             '{"version": "2018-05-29", "payload": "${ctx.args.meeting}"}'
         );
 
-        noneDataSource.createResolver({
+        noneDataSource.createResolver("id_stub", {
             typeName: "Query",
             fieldName: "stub",
             requestMappingTemplate: meetingRequestTemplate,
             responseMappingTemplate: meetingResponseTemplate,
         });
 
-        noneDataSource.createResolver({
+        noneDataSource.createResolver("id_startChimeSession", {
             typeName: "Mutation",
             fieldName: "startChimeSession",
             requestMappingTemplate: meetingRequestTemplate,
             responseMappingTemplate: meetingResponseTemplate,
         });
 
-        noneDataSource.createResolver({
+        noneDataSource.createResolver("id_claimChimeSession", {
             typeName: "Mutation",
             fieldName: "claimChimeSession",
             requestMappingTemplate: claimChimeSessionRequestTemplate,
             responseMappingTemplate: meetingResponseTemplate,
         });
 
-        noneDataSource.createResolver({
+        noneDataSource.createResolver("id_chimeSessionStarted", {
             typeName: "Subscription",
             fieldName: "chimeSessionStarted",
             requestMappingTemplate: meetingRequestTemplate,
             responseMappingTemplate: meetingResponseTemplate,
         });
 
-        noneDataSource.createResolver({
+        noneDataSource.createResolver("id_chimeSessionClaimed", {
             typeName: "Subscription",
             fieldName: "chimeSessionClaimed",
             requestMappingTemplate: claimChimeSessionRequestTemplate,

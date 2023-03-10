@@ -1,15 +1,14 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import * as cdk from "@aws-cdk/core";
-import {Construct, Stack} from "@aws-cdk/core";
-import * as s3 from "@aws-cdk/aws-s3";
-import * as s3Deployment from "@aws-cdk/aws-s3-deployment";
-import * as cloudfront from "@aws-cdk/aws-cloudfront";
-import * as lambda from "@aws-cdk/aws-lambda";
-import * as iam from "@aws-cdk/aws-iam";
-import * as cr from "@aws-cdk/custom-resources";
-
+import { Construct } from "constructs";
+import * as cdk from "aws-cdk-lib";
+import * as s3 from "aws-cdk-lib/aws-s3";
+import * as s3Deployment from "aws-cdk-lib/aws-s3-deployment";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
+import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as cr from "aws-cdk-lib/custom-resources";
 import * as path from "path";
 
 export interface StaticWebsiteStackProps {
@@ -23,7 +22,7 @@ export interface StaticWebsiteStackProps {
 /**
  * Defines the infrastructure for the user interface
  */
-export class StaticWebsiteStack extends Stack {
+export class StaticWebsiteStack extends cdk.Stack {
     // This file will be used to provide configuration for the static website, eg identity pool id or api urls
     public readonly s3ConfigFileKey: string = 'runtime-config.js';
 
