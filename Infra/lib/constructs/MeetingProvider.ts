@@ -57,7 +57,7 @@ export default class MeetingProvider extends Construct {
         const api = new apigateway.RestApi(this, `${id}Api`, apiDefaults);
 
         const lambdaFn = new lambda.Function(scope, `${id}-Handler`, {
-            runtime: lambda.Runtime.NODEJS_14_X,
+            runtime: lambda.Runtime.NODEJS_16_X,
             code: lambda.Code.fromAsset(getLambdaPath(props.lambdaAssetDirectory)),
             handler: `index.chimeCallHandler`,
             timeout: Duration.seconds(30),
