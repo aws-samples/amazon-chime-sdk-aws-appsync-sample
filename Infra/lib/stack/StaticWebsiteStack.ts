@@ -69,7 +69,7 @@ export class StaticWebsiteStack extends cdk.Stack {
         });
 
         const uploadWebsiteConfigFunction = new lambda.Function(this, 'UploadWebsiteConfigFunction', {
-            runtime: lambda.Runtime.PYTHON_3_7,
+            runtime: lambda.Runtime.PYTHON_3_10,
             handler: 'app.on_event',
             code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resources/upload-website-config')),
             timeout: cdk.Duration.seconds(30),
