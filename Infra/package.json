@@ -1,5 +1,5 @@
 {
-  "name": "crosstalk-infra",
+  "name": "@aws-samples/crosstalk-infra",
   "version": "1.0.0",
   "license": "MIT-0",
   "private": true,

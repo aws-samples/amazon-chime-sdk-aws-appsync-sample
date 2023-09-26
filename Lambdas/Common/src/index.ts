@@ -1,6 +1,18 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import * as api from "./api";
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*"
+};
 
-export default { api };
+export const respond = (statusCode: number, body: unknown) =>
+  respondRaw(statusCode, JSON.stringify(body));
+
+export const respondRaw = (statusCode: number, body: string) => ({
+  statusCode,
+  headers: {
+    "Content-Type": "application/json",
+    ...CORS_HEADERS
+  },
+  body
+});
