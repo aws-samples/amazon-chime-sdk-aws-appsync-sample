@@ -35,7 +35,7 @@ Once you have locally cloned this repository, and assuming you have
 
 - installed the current version of the AWS CLI
 
-- you have NodeJS 16 installed
+- you have NodeJS 18 installed
 
 - installed the current version of the AWS CLI
 
